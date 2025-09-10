@@ -1,0 +1,219 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 101;
+  background: white;
+  width: 100%;
+  .flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 60px;
+    /* background: #000; */
+  }
+
+  .logo {
+    font-size: 200%;
+    font-weight: 600;
+    color: #000;
+    font-family: "Grenze Gotisch", cursive;
+    span {
+      color: rgb(197, 90, 108);
+      font-size: 140%;
+    }
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+    font-size: 70%;
+    /* padding-top: 15px; */
+    width: 100%;
+    /* justify-content: flex-end; */
+
+    .search-holder {
+      width: 40rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      color: #161414;
+      font-size: 16px;
+
+      .category {
+        background-color: grey;
+        color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 0 20px;
+        border-radius: 45px;
+        border: solid 1px grey;
+        font-size: 90%;
+
+        ion-icon {
+          font-size: 14px;
+          margin-left: 5px;
+        }
+      }
+
+      input {
+        padding: 0 12px;
+        width: 70%;
+        height: 100%;
+        border: none;
+        border-bottom: solid 1px grey;
+        border-top: solid 1px grey;
+        border-left: solid 1px grey;
+        border-bottom-left-radius: 45px;
+        border-top-left-radius: 45px;
+      }
+
+      .search-btn {
+        background-color: pink;
+        padding: 0px 15px;
+        border-top-right-radius: 45px;
+        border-bottom-right-radius: 45px;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        height: 100%;
+        border: solid 1px grey;
+        border-left: none;
+      }
+    }
+
+    .log-btn {
+      color: white;
+      background: rgb(182, 55, 76);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 16px;
+      margin-right: 1rem;
+      padding: 0.5rem 1rem;
+      /* height: 40px; */
+      border-radius: 5px;
+    }
+    .log-btn:hover {
+      background: pink;
+      transition: all 0.4s;
+      color: black;
+    }
+
+    .sign-btn {
+      border: 1px solid rgb(182, 55, 76);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      color: rgb(182, 55, 76);
+    }
+
+    .sign-btn:hover {
+      background: pink;
+      border: none;
+      transition: all 0.4s;
+    }
+
+    .holder {
+      position: relative;
+      margin-left: 5px;
+      .counter {
+        position: absolute;
+        background-color: red;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        color: #fff;
+        display: grid;
+        place-items: center;
+        top: -4;
+        left: -7;
+      }
+    }
+    /* Add to header.css or a new cartItems.css file */
+    .cart-items {
+      position: absolute;
+      height: 560px;
+      width: 450px;
+      background: #fff;
+      right: 0;
+      top: 70px;
+      z-index: 100;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px #eee;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+
+      .cart-head {
+        font-size: x-large;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+      }
+
+      .cart-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 15px;
+        flex: 1;
+        overflow-y: auto;
+        margin-bottom: 8px;
+      }
+
+      .sub-btn {
+        margin-left: 16px;
+        padding: 2px 8px;
+        background: red;
+        color: white;
+        font-weight: 600;
+        font-size: 15px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+      .sub-btn:hover {
+        color: whitesmoke;
+        background: rgb(255, 55, 55);
+        transition: all 0.4s;
+        border: none;
+      }
+      .cart-list::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .empty-cart {
+        h1 {
+          font-weight: 600;
+          font-size: 22px;
+        }
+        .coll {
+          color: red;
+        }
+        i {
+          font-size: 13px;
+          font-weight: 600;
+          line-height: normal;
+          margin-top: 15px;
+        }
+        button {
+          padding: 8px 15px;
+          margin-top: 20px;
+          border-radius: 20px;
+          background: red;
+          color: white;
+          font-weight: 600;
+          font-size: 15px;
+          cursor: pointer;
+        }
+        button:hover {
+          color: whitesmoke;
+          background: rgb(255, 55, 55);
+          transition: all 0.4s;
+          border: none;
+        }
+      }
+    }
+  }
+}

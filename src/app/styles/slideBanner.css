@@ -1,0 +1,26 @@
+.slide-banner {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.slide-img-wrapper img {
+  height: 410px;
+  width: 1300px;
+  object-fit: fill;
+  border-radius: 8px;
+}
+
+.slide-indicators {
+  display: "flex";
+  justify-content: "center";
+  margin-top: 10;
+  width: "100%";
+}
+
+.slide-img-wrapper.sliding {
+  /* The transition is handled inline, but you can add more styles here if needed */
+}
+

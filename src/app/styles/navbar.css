@@ -1,0 +1,93 @@
+nav {
+  background: rgb(192, 68, 89);
+  margin-top: 100px;
+  .container {
+    margin-top: 100px;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    gap: 35px;
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 5px 15px;
+      position: relative;
+    }
+    .all-nav {
+      display: flex;
+      align-items: center;
+      padding: 5px 15px;
+      position: relative;
+    }
+    .all-nav:focus {
+      background: rgba(151, 54, 68, 1);
+    }
+  }
+  .nav-link:hover,
+  .nav-link:focus {
+    color: rgb(255, 166, 0);
+    transition: all 0.4s;
+    border-radius: 10px;
+  }
+  .nav-link::after {
+    position: absolute;
+    content: "";
+    background-color: rgb(255, 166, 0);
+    height: 3px;
+    width: 80%;
+    bottom: -6;
+    left: 12;
+    scale: 0;
+    transform-origin: left;
+    transition: all 0.4s;
+  }
+  .nav-link:hover::after {
+    scale: 1;
+  }
+  .contact-us {
+    position: relative;
+    padding: 5px;
+  }
+  .contact-us:hover,
+  .all-nav:hover {
+    font-weight: 900;
+    color: whitesmoke;
+  }
+  .contact-us::after {
+    position: absolute;
+    content: "";
+    background: whitesmoke;
+    height: 3px;
+    width: 100%;
+    bottom: -6;
+    scale: 0;
+    transform-origin: left;
+    transition: all 0.4s;
+  }
+  .contact-us:hover::after,
+  .all-nav:hover::after {
+    scale: 1;
+  }
+}
+
+.all-category-dropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 151;
+  left: 259;
+  z-index: 10;
+  background: rgba(151, 54, 68, 1);
+  border-radius: 8px;
+  animation: slideDown 0.3s ease;
+  .dropdown-link {
+    padding: 5px 110px 5px 20px;
+  }
+  .dropdown-link:hover {
+    color: white;
+    background: rgb(192, 68, 89);
+    transition: all 0.4s;
+  }
+}
