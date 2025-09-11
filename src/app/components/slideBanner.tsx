@@ -22,7 +22,7 @@ const SlideBanner: React.FC = () => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
         setIsSliding(false);
-      }, 500); // Duration of slide animation
+      }, 300); // Duration of slide animation
     }, 2000);
 
     return () => {

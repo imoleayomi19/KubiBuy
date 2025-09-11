@@ -130,7 +130,6 @@
         left: -7;
       }
     }
-    /* Add to header.css or a new cartItems.css file */
     .cart-items {
       position: absolute;
       height: 560px;
@@ -140,10 +139,13 @@
       top: 70px;
       z-index: 100;
       border-radius: 8px;
-      box-shadow: 0 2px 12px #eee;
+      box-shadow: 0 2px 12px #929292;
       padding: 16px;
       display: flex;
       flex-direction: column;
+      overflow-y: scroll;
+      scrollbar-width: thin;
+      scrollbar-color: #888 #f1f1f1;
 
       .cart-head {
         font-size: x-large;
@@ -161,6 +163,17 @@
         flex: 1;
         overflow-y: auto;
         margin-bottom: 8px;
+        background: pink;
+        padding: 5px;
+        border-radius: 8px;
+        gap: 12px;
+
+        .item-details {
+          font-size: 14px;
+          font-weight: 600;
+          flex: 1;
+          color: #333;
+        }
       }
 
       .sub-btn {
@@ -175,12 +188,24 @@
       }
       .sub-btn:hover {
         color: whitesmoke;
-        background: rgb(255, 55, 55);
+        background: rgb(202, 0, 0);
         transition: all 0.4s;
         border: none;
       }
       .cart-list::-webkit-scrollbar {
         width: 8px;
+      }
+
+      .cart-subtotal {
+        font-size: 1.1rem;
+        color: #333;
+        margin-top: 150px;
+        padding: 10px;
+        text-align: right;
+        font-weight: 700;
+        border-top: 2px solid gray;
+        display: flex;
+        justify-content: space-between;
       }
 
       .empty-cart {
@@ -197,23 +222,34 @@
           line-height: normal;
           margin-top: 15px;
         }
-        button {
-          padding: 8px 15px;
-          margin-top: 20px;
-          border-radius: 20px;
-          background: red;
-          color: white;
-          font-weight: 600;
-          font-size: 15px;
-          cursor: pointer;
-        }
-        button:hover {
-          color: whitesmoke;
-          background: rgb(255, 55, 55);
-          transition: all 0.4s;
-          border: none;
-        }
       }
     }
   }
+}
+.go-shop-btn,
+.pay-btn {
+  background: red;
+  color: #fff;
+  padding: 8px 15px;
+  font-size: 15px;
+  font-weight: 600;
+  width: 200px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  cursor: pointer;
+  margin-top: 10px;
+  border: none;
+  font: sans-serif;
+  box-shadow: 0 2px 12px #929292;
+  transition: all 0.4s;
+  letter-spacing: 2px;
+  outline: none;
+
+}
+.go-shop-btn:hover,
+.pay-btn:hover {
+  color: whitesmoke;
+  background: rgb(202, 0, 0);
+  transition: all 0.4s;
+  border: none;
 }

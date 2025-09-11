@@ -10,7 +10,7 @@ import "../styles/header.css";
 
 const CART_STORAGE_KEY = "shopping_cart";
 
-const Landpage = () => {
+const LandPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [cart, setCart] = useState([]);
 
@@ -101,7 +101,11 @@ const Landpage = () => {
                   </h2>
                   {cart.length === 0 ? (
                     <div className="empty-cart flex flex-col m-auto">
-                      <img className="w-60 h-60" src="empty.JPG" alt="" />
+                      <img
+                        className="w-60 h-60"
+                        src="/images/empty.JPG"
+                        alt=""
+                      />
                       <h1>
                         Your Cart is <span className="coll"> Empty!</span>
                       </h1>
@@ -111,63 +115,85 @@ const Landpage = () => {
                           toys, games, and more!
                         </marquee>
                       </i>
-                      <button>Go Shopping</button>
+                      <button className="go-shop-btn">Go Shopping</button>
                     </div>
                   ) : (
-                    // ...existing code...
-                    <ul>
-                      {cart.map((item) => {
-                        const product = products.find((p) => p.id === item.id);
-                        return (
-                          <li
-                            key={item.id}
-                            className="cart-list flex items-center mb-2"
-                          >
-                            {/* Image section */}
-                            <img
-                              src={product?.image}
-                              alt={product?.name}
-                              className="cart-item-img"
-                              style={{
-                                width: "48px",
-                                height: "48px",
-                                objectFit: "cover",
-                                borderRadius: "8px",
-                                marginRight: "12px",
-                                border: "1px solid #eee",
-                                background: "#fafafa",
-                              }}
-                            />
-                            <span className="flex-1">
-                              {product?.name} x {item.quantity} — $
-                              {product
-                                ? (product.price * item.quantity).toFixed(2)
-                                : "N/A"}
-                            </span>
-                            <button
-                              className="sub-btn ml-2"
-                              onClick={() => {
-                                setCart((prevCart) =>
-                                  prevCart
-                                    .map((cartItem) =>
-                                      cartItem.id === item.id
-                                        ? {
-                                            ...cartItem,
-                                            quantity: cartItem.quantity - 1,
-                                          }
-                                        : cartItem
-                                    )
-                                    .filter((cartItem) => cartItem.quantity > 0)
-                                );
-                              }}
+                    <>
+                      <ul>
+                        {cart.map((item) => {
+                          const product = products.find(
+                            (p) => p.id === item.id
+                          );
+                          return (
+                            <li
+                              key={item.id}
+                              className="cart-list flex items-center mb-2"
                             >
-                              −
-                            </button>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                    // ...existing code...
+                              {/* Image section */}
+                              <img
+                                src={product?.image}
+                                alt={product?.name}
+                                className="cart-item-img"
+                                style={{
+                                  width: "48px",
+                                  height: "48px",
+                                  objectFit: "cover",
+                                  borderRadius: "8px",
+                                  marginRight: "12px",
+                                  border: "1px solid #eee",
+                                  background: "#fafafa",
+                                }}
+                              />
+                              <span className="flex-1 item-details">
+                                {product?.name} x {item.quantity} — $
+                                {product
+                                  ? (product.price * item.quantity).toFixed(2)
+                                  : "N/A"}
+                              </span>
+                              <button
+                                className="sub-btn ml-2"
+                                onClick={() => {
+                                  setCart((prevCart) =>
+                                    prevCart
+                                      .map((cartItem) =>
+                                        cartItem.id === item.id
+                                          ? {
+                                              ...cartItem,
+                                              quantity: cartItem.quantity - 1,
+                                            }
+                                          : cartItem
+                                      )
+                                      .filter(
+                                        (cartItem) => cartItem.quantity > 0
+                                      )
+                                  );
+                                }}
+                              >
+                                −
+                              </button>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                      {/* Subtotal section */}
+                      <div className="cart-subtotal">
+                        <span>Total: </span>$
+                        {cart
+                          .reduce((sum, item) => {
+                            const product = products.find(
+                              (p) => p.id === item.id
+                            );
+                            return (
+                              sum +
+                              (product ? product.price * item.quantity : 0)
+                            );
+                          }, 0)
+                          .toFixed(2)}
+                      </div>
+                      <div className=" flex justify-center">
+                        <button className="pay-btn">Pay Now</button>
+                      </div>
+                    </>
                   )}
                 </div>
               )}
@@ -200,7 +226,7 @@ const Landpage = () => {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 object-contain"
                 />
                 <div className="p-4 flex-1 flex flex-col">
                   <h3 className="text-xl font-semibold text-gray-800">
@@ -228,4 +254,4 @@ const Landpage = () => {
   );
 };
 
-export default Header;
+export default LandPage;
