@@ -14,9 +14,9 @@ export default function RegisterPage() {
     acceptTerms: false,
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -28,8 +28,7 @@ export default function RegisterPage() {
   };
 
   const validateForm = () => {
-    const newErrors = {};
-    
+    const newErrors: { [key: string]: string } = {};
     if (!formData.name.trim()) newErrors.name = 'Name is required';
     if (!formData.email) newErrors.email = 'Email is required';
     else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
@@ -37,19 +36,16 @@ export default function RegisterPage() {
     else if (formData.password.length < 6) newErrors.password = 'Password must be at least 6 characters';
     if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = 'Passwords do not match';
     if (!formData.acceptTerms) newErrors.acceptTerms = 'You must accept the terms and conditions';
-    
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const formErrors = validateForm();
-    
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
       return;
     }
-    
     setIsLoading(true);
     // Simulate API call
     setTimeout(() => {
@@ -91,6 +87,7 @@ export default function RegisterPage() {
                   onChange={handleChange}
                   className={`form-input ${errors.name ? 'input-error' : ''}`}
                   placeholder="Enter your full name"
+                  autoComplete="name"
                 />
                 <span className="input-icon">👤</span>
               </div>
@@ -108,6 +105,7 @@ export default function RegisterPage() {
                   onChange={handleChange}
                   className={`form-input ${errors.email ? 'input-error' : ''}`}
                   placeholder="you@example.com"
+                  autoComplete="email"
                 />
                 <span className="input-icon">📧</span>
               </div>
@@ -125,6 +123,7 @@ export default function RegisterPage() {
                   onChange={handleChange}
                   className={`form-input ${errors.password ? 'input-error' : ''}`}
                   placeholder="Create a password"
+                  autoComplete="new-password"
                 />
                 <span className="input-icon">🔒</span>
               </div>
@@ -142,6 +141,7 @@ export default function RegisterPage() {
                   onChange={handleChange}
                   className={`form-input ${errors.confirmPassword ? 'input-error' : ''}`}
                   placeholder="Confirm your password"
+                  autoComplete="new-password"
                 />
                 <span className="input-icon">🔒</span>
               </div>
