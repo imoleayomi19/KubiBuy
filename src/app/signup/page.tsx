@@ -13,7 +13,6 @@ export default function RegisterPage() {
     confirmPassword: '',
     acceptTerms: false,
   });
-  const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,33 +24,6 @@ export default function RegisterPage() {
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
-  };
-
-  const validateForm = () => {
-    const newErrors: { [key: string]: string } = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.email) newErrors.email = 'Email is required';
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
-    if (!formData.password) newErrors.password = 'Password is required';
-    else if (formData.password.length < 6) newErrors.password = 'Password must be at least 6 characters';
-    if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = 'Passwords do not match';
-    if (!formData.acceptTerms) newErrors.acceptTerms = 'You must accept the terms and conditions';
-    return newErrors;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const formErrors = validateForm();
-    if (Object.keys(formErrors).length > 0) {
-      setErrors(formErrors);
-      return;
-    }
-    setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false);
-      alert('Account created successfully! 🎉 Welcome to kubiBuy!');
-    }, 2000);
   };
 
   return (
@@ -75,7 +47,7 @@ export default function RegisterPage() {
             <p className="brand-subtitle">Create your account in seconds 🚀</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="register-form">
+          <form className="register-form">
             <div className="form-group">
               <label htmlFor="name" className="form-label">Full Name</label>
               <div className="input-container">
@@ -165,26 +137,6 @@ export default function RegisterPage() {
               </label>
             </div>
             {errors.acceptTerms && <p className="error-message">{errors.acceptTerms}</p>}
-
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              type="submit"
-              disabled={isLoading}
-              className="cta-button"
-            >
-              {isLoading ? (
-                <>
-                  <svg className="spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  Creating account...
-                </>
-              ) : (
-                'Create Account'
-              )}
-            </motion.button>
           </form>
 
           <div className="login-link">
