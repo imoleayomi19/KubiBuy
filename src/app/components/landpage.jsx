@@ -39,6 +39,14 @@ const LandPage = () => {
     router.push("/signup");
   };
 
+  // Scroll to Kids’ Shopping Store section
+  const handleShopClick = () => {
+    const storeSection = document.getElementById("kids-shopping-store");
+    if (storeSection) {
+      storeSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   // Add to cart handler
   const handleAddToCart = (productId) => {
     setCart((prevCart) => {
@@ -66,15 +74,13 @@ const LandPage = () => {
               <span>K</span>ubi<span>B</span>uy
             </div>
 
-            <div className="flex">
-              <div className="search-holder">
-                <input type="text" placeholder="Search Products..." />
-                <div className="search-btn">
-                  <button className="cursor-pointer">
-                    <img className="w-6 h-6" src="search.svg" />
-                  </button>
-                </div>
-              </div>
+            <div className="search-holder ml-15 ">
+              <img className="w-6 h-6 search-icon" src="search.svg" />
+              <input
+                className="ml-5 search-input"
+                type="search"
+                placeholder="Search Product..."
+              />
             </div>
 
             <div className="flex justify-end">
@@ -115,7 +121,9 @@ const LandPage = () => {
                           toys, games, and more!
                         </marquee>
                       </i>
-                      <button className="go-shop-btn">Go Shopping</button>
+                      <button onClick={handleShopClick} className="go-shop-btn">
+                        Go Shopping
+                      </button>
                     </div>
                   ) : (
                     <>
@@ -203,7 +211,10 @@ const LandPage = () => {
       </div>
       <Navbar />
       <SlideBanner />
-      <div className="min-h-screen bg-pink-50 p-6">
+      <div
+        className="min-h-screen bg-pink-50 p-6 scroll-mt-25"
+        id="kids-shopping-store"
+      >
         <header className="text-center mb-10">
           <h1 className="text-4xl font-bold text-purple-600">
             🧸 Kids’ Shopping Store

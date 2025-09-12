@@ -81,7 +81,7 @@ nav {
   z-index: 10;
   background: rgba(151, 54, 68, 1);
   border-radius: 8px;
-  animation: slideDown 0.3s ease;
+  transition: opacity 0.3s, transform 0.3s;
   .dropdown-link {
     padding: 5px 110px 5px 20px;
   }

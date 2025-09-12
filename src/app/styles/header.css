@@ -23,6 +23,38 @@
     }
   }
 
+  .search-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: "50px";
+    border-radius: 28px;
+    padding: 10px;
+    width: max-content;
+    background: #e6e6e6;
+    width: 900px;
+    transition: box-shadow 0.25s;
+  }
+
+  .search-holder:focus-within{
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+  }
+
+  .search-input {
+    font-size: 16px;
+    font-family: "Lexend", sans-serif;
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+    color: #333333;
+  }
+
+  .search-input::placeholder,
+  .search-icon {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
   .flex {
     display: flex;
     align-items: center;
@@ -30,57 +62,21 @@
     /* padding-top: 15px; */
     width: 100%;
     /* justify-content: flex-end; */
-
-    .search-holder {
-      width: 40rem;
+    .category {
+      background-color: grey;
+      color: #000;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 40px;
-      color: #161414;
-      font-size: 16px;
+      height: 100%;
+      padding: 0 20px;
+      border-radius: 45px;
+      border: solid 1px grey;
+      font-size: 90%;
 
-      .category {
-        background-color: grey;
-        color: #000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        padding: 0 20px;
-        border-radius: 45px;
-        border: solid 1px grey;
-        font-size: 90%;
-
-        ion-icon {
-          font-size: 14px;
-          margin-left: 5px;
-        }
-      }
-
-      input {
-        padding: 0 12px;
-        width: 70%;
-        height: 100%;
-        border: none;
-        border-bottom: solid 1px grey;
-        border-top: solid 1px grey;
-        border-left: solid 1px grey;
-        border-bottom-left-radius: 45px;
-        border-top-left-radius: 45px;
-      }
-
-      .search-btn {
-        background-color: pink;
-        padding: 0px 15px;
-        border-top-right-radius: 45px;
-        border-bottom-right-radius: 45px;
-        display: grid;
-        place-items: center;
-        color: #fff;
-        height: 100%;
-        border: solid 1px grey;
-        border-left: none;
+      ion-icon {
+        font-size: 14px;
+        margin-left: 5px;
       }
     }
 
@@ -179,7 +175,7 @@
       .sub-btn {
         margin-left: 16px;
         padding: 2px 8px;
-        background: red;
+        background: linear-gradient(135deg, #ec6081 0%, #c42205 100%);
         color: white;
         font-weight: 600;
         font-size: 15px;
@@ -228,28 +224,34 @@
 }
 .go-shop-btn,
 .pay-btn {
-  background: red;
-  color: #fff;
-  padding: 8px 15px;
-  font-size: 15px;
+  display: inline-block;
+  padding: 10px 28px;
+  margin-top: 10px;
+
+  font-size: 18px;
   font-weight: 600;
   width: 200px;
+
+  color: #fff;
+  background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+  border: none;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
   cursor: pointer;
-  margin-top: 10px;
-  border: none;
-  font: sans-serif;
-  box-shadow: 0 2px 12px #929292;
-  transition: all 0.4s;
-  letter-spacing: 2px;
-  outline: none;
-
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
 }
 .go-shop-btn:hover,
 .pay-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 65, 108, 0.6);
   color: whitesmoke;
-  background: rgb(202, 0, 0);
-  transition: all 0.4s;
-  border: none;
+}
+.go-shop-btn:active,
+.pay-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(255, 65, 108, 0.4);
 }

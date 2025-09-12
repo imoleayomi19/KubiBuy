@@ -13,7 +13,7 @@ const NavBar = () => {
     <nav>
       <div className="container">
         <Link className="all-nav" onClick={toggleAllCategory} href="#All">
-          All Category
+          Categories
           <img className="h-8 w-8" src="chevron.svg" />
         </Link>
         {isOpen && (
@@ -36,20 +36,18 @@ const NavBar = () => {
         <Link href="/" className="nav-active nav-link scroll-easing">
           Home
         </Link>
-        <Link href="/pages" className="nav-link  scroll-easing">
-          Pages
+        <Link href="/about" className="nav-link  scroll-easing">
+          About
         </Link>
-        <Link href="/products" className="nav-link  scroll-easing">
-          Products
+        <Link href="/product" className="nav-link  scroll-easing">
+          Product
         </Link>
-        <Link href="/shop" className="nav-link  scroll-easing">
-          Shop
-        </Link>
+        
         <Link
           href="/contact"
           className="contact-us scroll-easing items-center flex justify-center"
         >
-          Contact Us
+          Contact
         </Link>
       </div>
     </nav>
