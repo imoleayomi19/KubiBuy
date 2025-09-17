@@ -1,11 +1,18 @@
-'use client';
+"use client";
 
 import "../styles/about.css";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
+// import { useEffect, useState} from "react";
+import { useRouter } from "next/navigation";
 
 export default function AboutUsPage() {
+  const router = useRouter();
+
+  const handleClickShopCollection = () => {
+    router.push("/");
+  };
   return (
-    <div className="page-container">
+    <div className="about-container">
       <section className="hero-banner">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -13,13 +20,19 @@ export default function AboutUsPage() {
           transition={{ duration: 0.8 }}
           className="hero-content"
         >
-          <h1 className="hero-title">
-            Welcome to <span className="hero-pink">kubiBuy</span>!
+          <h1 className="hero-title flex">
+            Welcome to
+            <p className="ml-5">
+              <span className="logo">K</span>ubi<span className="logo">B</span>
+              uy
+            </p>
           </h1>
           <p className="hero-subtitle">
-            Where little adventures begin in the comfiest, cutest clothes & accessories.
+            Where little adventures begin in the comfiest, cutest clothes &
+            accessories.
           </p>
           <motion.button
+            onClick={handleClickShopCollection}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="cta-button"
@@ -45,13 +58,19 @@ export default function AboutUsPage() {
             >
               <h2 className="section-heading">Our Story</h2>
               <p className="section-paragraph">
-                kubiBuy started with a simple dream: to make shopping for kids' clothes joyful, easy, and safe for parents, while ensuring every little one feels happy and comfortable in what they wear.
+                kubiBuy started with a simple dream: to make shopping for kids'
+                clothes joyful, easy, and safe for parents, while ensuring every
+                little one feels happy and comfortable in what they wear.
               </p>
               <p className="section-paragraph">
-                Founded by parents who know the struggle of finding clothes that are both adorable *and* durable, we carefully select every item for its quality, safety, and undeniable cuteness factor.
+                Founded by parents who know the struggle of finding clothes that
+                are both adorable *and* durable, we carefully select every item
+                for its quality, safety, and undeniable cuteness factor.
               </p>
               <p className="section-paragraph">
-                We believe playtime shouldn't be limited by itchy tags or boring designs. That's why kubiBuy offers vibrant colors, soft fabrics, and styles that let imaginations run wild.
+                We believe playtime shouldn't be limited by itchy tags or boring
+                designs. That's why kubiBuy offers vibrant colors, soft fabrics,
+                and styles that let imaginations run wild.
               </p>
             </motion.div>
             <motion.div
@@ -136,7 +155,9 @@ export default function AboutUsPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mission-text"
           >
-            To spark joy in every child and build trust with every parent, delivering delightful, safe, and stylish children's wear that makes everyday moments special.
+            To spark joy in every child and build trust with every parent,
+            delivering delightful, safe, and stylish children's wear that makes
+            everyday moments special.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}

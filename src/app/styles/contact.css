@@ -15,7 +15,7 @@ body {
   line-height: inherit;
 }
 
-.page-container {
+.contact-container {
   min-height: 100vh;
   background: linear-gradient(to bottom right, #dbeafe, #fdf2f8, #fefce8);
   position: relative;
@@ -151,7 +151,7 @@ body {
 .form-select,
 .form-textarea {
   width: 100%;
-  padding: 1rem 1.25rem;
+  padding: 0.8rem 1rem;
   border: 2px solid #e5e7eb;
   border-radius: 1rem;
   font-size: 1rem;
@@ -176,7 +176,7 @@ body {
   background: linear-gradient(to right, #ec4899, #8b5cf6);
   color: white;
   font-weight: 700;
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.6rem;
   border-radius: 1rem;
   font-size: 1.125rem;
   border: none;
@@ -369,12 +369,12 @@ body {
   .form-input,
   .form-select,
   .form-textarea {
-    padding: 1.25rem 1.5rem;
+    padding: 0.8rem 1rem;
   }
 
   .cta-button {
-    padding: 1.25rem 2rem;
-    font-size: 1.25rem;
+    padding: 0.8rem rem;
+    font-size: 1.2rem;
   }
 
   .info-icon {

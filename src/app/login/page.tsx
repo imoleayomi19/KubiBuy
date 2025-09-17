@@ -22,7 +22,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="page-container">
+    <div className="login-container">
       <div className="login-wrapper">
         <div className="decorative-bubble bubble-yellow"></div>
         <div className="decorative-bubble bubble-blue"></div>
@@ -36,7 +36,7 @@ export default function LoginPage() {
         >
           <div className="brand-section">
             <h1 className="brand-title">
-              kubi<span className="brand-pink">Buy</span>
+              <span className='logo'>K</span>ubi<span className='logo'>B</span>uy
             </h1>
             <p className="brand-subtitle">Welcome back, super parent! 👶</p>
           </div>

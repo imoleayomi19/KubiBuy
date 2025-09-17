@@ -27,7 +27,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="page-container">
+    <div className="signup-container">
       <div className="register-wrapper">
         <div className="decorative-bubble bubble-pink"></div>
         <div className="decorative-bubble bubble-yellow"></div>
@@ -41,8 +41,11 @@ export default function RegisterPage() {
           className="register-card"
         >
           <div className="brand-section">
-            <h1 className="brand-title">
-              Join <span className="brand-pink">kubiBuy</span>
+            <h1 className="brand-title flex">
+              Join <p className="ml-3">
+              <span className="logo">K</span>ubi<span className="logo">B</span>
+              uy
+            </p>
             </h1>
             <p className="brand-subtitle">Create your account in seconds 🚀</p>
           </div>

@@ -3,7 +3,7 @@
 import React, { use } from "react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { products, Product } from "@/app/data/products"; // 👈 Import from data file
+import { products, Product } from "@/app/data/products";
 import SlideBanner from "./slideBanner";
 import Navbar from "./navbar";
 import "../styles/header.css";

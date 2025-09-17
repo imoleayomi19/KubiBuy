@@ -39,7 +39,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="page-container">
+    <div className="contact-container">
       <section className="hero-section">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

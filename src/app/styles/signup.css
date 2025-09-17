@@ -15,7 +15,7 @@ body {
   line-height: inherit;
 }
 
-.page-container {
+.signup-container {
   min-height: 100vh;
   background: linear-gradient(to bottom right, #e0d5ff, #fdf2f8, #fefce8);
   display: flex;
@@ -127,15 +127,19 @@ body {
 }
 
 .brand-title {
-  font-size: 1.875rem;
   font-weight: 800;
   color: #1f2937;
-  margin-bottom: 0.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.brand-pink {
-  color: #ec4899;
-}
+.logo {
+    font-weight: 600;
+    color: #000;
+    font-family: "Grenze Gotisch", cursive;
+    color: rgb(197, 90, 108);
+    font-size: 50px;
+  }
 
 .brand-subtitle {
   font-size: 1rem;
@@ -295,7 +299,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  .page-container {
+  .signup-container {
     padding: 2rem;
   }
 
@@ -319,7 +323,7 @@ body {
 }
 
 @media (min-width: 1024px) {
-  .page-container {
+  .signup-container {
     padding: 4rem;
   }
 

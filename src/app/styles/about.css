@@ -15,7 +15,15 @@ body {
   line-height: inherit;
 }
 
-.page-container {
+
+  .logo {
+    font-weight: 600;
+    color: #000;
+    font-family: "Grenze Gotisch", cursive;
+    color: rgb(197, 90, 108);
+  }
+
+.about-container {
   min-height: 100vh;
   background: linear-gradient(to bottom right, #fefce8, #fdf2f8, #dbeafe);
   position: relative;
@@ -61,7 +69,7 @@ body {
   background: linear-gradient(to right, #ec4899, #8b5cf6);
   color: white;
   font-weight: 700;
-  padding: 1rem 2rem;
+  padding: 0.6rem 2rem;
   border-radius: 9999px;
   font-size: 1.125rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
